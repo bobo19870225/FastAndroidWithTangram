@@ -25,8 +25,11 @@
 package com.jinkan.www.fastandroidwithtangram.data;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.tmall.wireless.tangram.structure.BaseCell;
 import com.tmall.wireless.tangram.structure.CellRender;
@@ -36,7 +39,7 @@ import com.tmall.wireless.tangram.util.Utils;
 /**
  * Created by villadora on 15/9/7.
  */
-public class SimpleImgView extends RatioImageView {
+public class SimpleImgView extends AppCompatImageView {
 
     public SimpleImgView(Context context) {
         super(context);
@@ -62,13 +65,13 @@ public class SimpleImgView extends RatioImageView {
     @CellRender
     public void postBindView(BaseCell cell) {
         String imgUrl = cell.optStringParam("imgUrl");
-        float ratioFromUrl = Utils.getImageRatio(imgUrl);
-        setRatio(ratioFromUrl);
-        if (cell.style != null) {
-            if (!Float.isNaN(cell.style.aspectRatio)) {
-                setRatio(cell.style.aspectRatio, RatioImageView.PRIORITY_HIGH);
-            }
-        }
+//        float ratioFromUrl = Utils.getImageRatio(imgUrl);
+//        setRatio(ratioFromUrl);
+//        if (cell.style != null) {
+//            if (!Float.isNaN(cell.style.aspectRatio)) {
+//                setRatio(cell.style.aspectRatio, RatioImageView.PRIORITY_HIGH);
+//            }
+//        }
         ImageUtils.doLoadImageUrl(this, imgUrl);
         setOnClickListener(cell);
     }
@@ -76,4 +79,5 @@ public class SimpleImgView extends RatioImageView {
     @CellRender
     public void postUnBindView(BaseCell cell) {
     }
+
 }

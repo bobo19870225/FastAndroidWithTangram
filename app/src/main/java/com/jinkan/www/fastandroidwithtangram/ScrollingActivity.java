@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.vlayout.Range;
 import com.jinkan.www.fastandroidwithtangram.data.DEBUG;
 import com.jinkan.www.fastandroidwithtangram.data.RatioTextView;
+import com.jinkan.www.fastandroidwithtangram.data.RoundImageViewByBitmapShader;
 import com.jinkan.www.fastandroidwithtangram.data.SimpleImgView;
 import com.jinkan.www.fastandroidwithtangram.data.SingleImageView;
 import com.jinkan.www.fastandroidwithtangram.data.TestView;
@@ -107,23 +105,12 @@ public class ScrollingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-//        setContentView(R.layout.activity_scrolling);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            Window window = getWindow();
+//            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        }
+
         setContentView(R.layout.main_activity);
 
         mMainHandler = new Handler(getMainLooper());
@@ -141,7 +128,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         //Step 3: register business cells and cards
         builder.registerCell("1", TestView.class);
-        builder.registerCell("10", SimpleImgView.class);
+        builder.registerCell("10", RoundImageViewByBitmapShader.class);
         builder.registerCell("2", SimpleImgView.class);
         builder.registerCell("4", RatioTextView.class);
         builder.registerCell("110",
