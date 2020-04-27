@@ -1,35 +1,39 @@
 [
   {
-    "type": "container-banner",
-    "style": {
-      "pageWidth": 200,
-      "pageHeight": 100,
-      "indicatorMargin": "5",
-      "infinite": "true",
-      "indicatorImg2": "https://img.alicdn.com/tps/TB1XRNFNXXXXXXKXXXXXXXXXXXX-32-4.png",
-      "indicatorImg1": "https://img.alicdn.com/tps/TB16i4qNXXXXXbBXFXXXXXXXXXX-32-4.png",
-      "scrollMarginLeft": "10",
-      "indicatorGap": "2",
-      "indicatorHeight": "1.5",
-      "itemRatio": "2.654",
-      "scrollMarginRight": "10",
-      "indicatorGravity": "center",
-      "autoScroll": 5000,
-      "hGap": "20"
-    },
+    "type": "container-threeColumn",
+    "cols": [
+      30,
+      60
+    ],
+    "height": 50,
     "items": [
       {
-        "imgUrl": "http://qn.wgclm.com/42a4cffd09a543e4b7c3bdd2aa9b3c18.jpg",
-        "type": 10
+        "type": 1,
+        "msg": "info1",
+        "action": {
+          "id": 1,
+          "data": "this is data"
+        },
+        "style": {
+        }
       },
       {
-        "imgUrl": "http://qn.wgclm.com/d2e87b2bd3d3478fa235b6afee80d307.jpg",
-        "type": 10
+        "type": 1,
+        "msg": "info2",
+        "style": {
+        }
+      },
+      {
+        "type": 1,
+        "msg": "info3",
+        "style": {
+        }
       }
     ]
   },
   {
     "type": "container-oneColumn",
+
     "items": [
       {
         "id": "banner1",
@@ -45,45 +49,18 @@
           "itemRatio": "2.654",
           "scrollMarginRight": "10",
           "indicatorGravity": "center",
+          "autoScroll": 5000,
           "hGap": "20",
           "height": 200
         },
         "items": [
           {
-            "type": 1,
-            "msg": "info1",
-            "style": {
-            }
+            "imgUrl": "http://qn.wgclm.com/42a4cffd09a543e4b7c3bdd2aa9b3c18.jpg",
+            "type": 10
           },
           {
-            "type": 1,
-            "msg": "info2",
-            "style": {
-            }
-          },
-          {
-            "type": 1,
-            "msg": "info3",
-            "style": {
-            }
-          },
-          {
-            "type": 1,
-            "msg": "info4",
-            "style": {
-            }
-          },
-          {
-            "type": 1,
-            "msg": "info5",
-            "style": {
-            }
-          },
-          {
-            "type": 1,
-            "msg": "info6",
-            "style": {
-            }
+            "imgUrl": "http://qn.wgclm.com/d2e87b2bd3d3478fa235b6afee80d307.jpg",
+            "type": 10
           }
         ]
       }

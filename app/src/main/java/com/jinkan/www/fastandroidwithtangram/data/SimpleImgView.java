@@ -59,7 +59,6 @@ public class SimpleImgView extends AppCompatImageView {
     @CellRender
     public void cellInited(BaseCell cell) {
         setOnClickListener(cell);
-
     }
 
     @CellRender

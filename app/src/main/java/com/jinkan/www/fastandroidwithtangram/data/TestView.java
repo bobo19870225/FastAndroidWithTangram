@@ -26,8 +26,10 @@ package com.jinkan.www.fastandroidwithtangram.data;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jinkan.www.fastandroidwithtangram.R;
 import com.tmall.wireless.tangram.structure.BaseCell;
@@ -76,7 +78,12 @@ public class TestView extends FrameLayout implements ITangramViewLifeCycle {
         textView.setText(
                 cell.id + " pos: " + pos + " " + parent + " " + cell
                         .optParam("msg"));
-
+//        textView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(v.getContext(), "嗲", Toast.LENGTH_LONG).show();
+//            }
+//        });
         if (pos > 57) {
             textView.setBackgroundColor(0x66cccf00 + (pos - 50) * 128);
         } else if (pos % 2 == 0) {
